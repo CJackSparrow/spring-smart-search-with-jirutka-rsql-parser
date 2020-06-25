@@ -1,0 +1,11 @@
+2020-06-23 09:36:32.118  INFO 5276 --- [main] c.demo.samplerest.SampleRestApplication  : Starting SampleRestApplication on DESKTOP-HB116GO with PID 5276 (E:\Demo\sample-rest\target\classes started by CJack in E:\Demo\sample-rest)
+2020-06-23 09:36:32.139  INFO 5276 --- [main] c.demo.samplerest.SampleRestApplication  : No active profile set, falling back to default profiles: default
+2020-06-23 09:36:33.950  INFO 5276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8686 (http)
+2020-06-23 09:36:33.963  INFO 5276 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-23 09:36:33.963  INFO 5276 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-23 09:36:34.063  INFO 5276 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-23 09:36:34.063  INFO 5276 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1766 ms
+2020-06-23 09:36:34.263  INFO 5276 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-23 09:36:34.404  INFO 5276 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-23 09:36:34.449  INFO 5276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8686 (http) with context path ''
+2020-06-23 09:36:34.467  INFO 5276 --- [main] c.demo.samplerest.SampleRestApplication  : Started SampleRestApplication in 3.335 seconds (JVM running for 4.97)
