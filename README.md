@@ -4,6 +4,6 @@
 
 ## Reference: https://www.baeldung.com/rest-api-search-language-rsql-fiql
 
-## In this project fix 2 problem : 
+## Resovled 2 problem : 
   * Search with case sensitive query with ORACLE:
   * Search with nested attribute: **https://github.com/jirutka/rsql-parser/issues/29**
