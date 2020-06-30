@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,6 +25,8 @@ public class GenericRsqlSpecification<T> implements Specification<T> {
         Object argument = args.get(0);
         switch (RsqlSearchOperation.getSimpleOperator(operator)) {
             case EQUAL:
+                DateCheckInfo dateCheck = checkAndGetDate(argument);
+                if(dateCheck.getIsDateFormat()) argument = dateCheck.getDate();
                 if (argument instanceof String)
                     return builder.like(builder.lower(propertyExpression),
                             formatArgument(argument), '\\');
@@ -100,5 +104,19 @@ public class GenericRsqlSpecification<T> implements Specification<T> {
             else if (type.equals(Byte.class)) return Byte.parseByte(arg);
             else return arg;
         }).collect(Collectors.toList());
+    }
+
+    private DateCheckInfo checkAndGetDate(Object argument){
+        try{
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            return DateCheckInfo.builder()
+                    .date(formatter.parse(argument.toString()))
+                    .isDateFormat(true)
+                    .build();
+        } catch (ParseException e) {
+            return DateCheckInfo.builder()
+                    .isDateFormat(false)
+                    .build();
+        }
     }
 }
